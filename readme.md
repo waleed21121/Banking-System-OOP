@@ -1,19 +1,36 @@
-Banking System
-A TypeScript-based banking system implemented using object-oriented programming (OOP) principles. This project demonstrates account management, transactions, and customer handling without using frameworks or databases, relying solely on Node.js and TypeScript.
-Features
+🏦 TypeScript Banking System
+A simple yet powerful banking system built with Node.js and TypeScript, applying solid Object-Oriented Programming (OOP) principles. This system supports account management, transactions, customer handling, and error management—all without any frameworks or databases.
 
-Account Management: Create and manage savings and checking accounts.
-Transactions: Perform deposits, withdrawals, and transfers between accounts.
-Customer Management: Associate accounts with customers.
-Transaction History: Track all transactions with timestamps and descriptions.
-Account Types:
+✨ Features
+🧾 Account Management
+Create and manage Savings and Checking accounts.
+
+💸 Transactions
+Perform deposits, withdrawals, and transfers between accounts.
+
+👤 Customer Management
+Associate accounts with individual customers.
+
+📜 Transaction History
+Track all account activity with timestamps and descriptions.
+
+🏦 Account Types
+
 SavingsAccount: Supports interest application on the balance.
-CheckingAccount: Allows overdraft up to a specified limit, permitting negative balances.
 
+CheckingAccount: Supports overdraft up to a set limit.
 
-Error Handling: Custom exceptions for invalid operations (e.g., insufficient funds, exceeding overdraft limit).
+🚨 Error Handling
+Custom exceptions for invalid operations such as:
 
-Project Structure
+Insufficient funds
+
+Exceeding overdraft limit
+
+🗂 Project Structure
+pgsql
+Copy
+Edit
 banking-system/
 ├── src/
 │   ├── interfaces/
@@ -30,73 +47,108 @@ banking-system/
 ├── tsconfig.json
 ├── package.json
 └── README.md
+📁 Description of Folders
+src/interfaces/ – Defines the IAccount interface.
 
+src/models/ – Contains core classes: Account, SavingsAccount, CheckingAccount, Customer, and Transaction.
 
-src/interfaces/: Defines the IAccount interface for account operations.
-src/models/: Contains classes for accounts, customers, and transactions.
-src/exceptions/: Custom BankingError class for error handling.
-src/main.ts: Entry point demonstrating the system's functionality.
-tsconfig.json: TypeScript configuration for CommonJS modules.
-package.json: Project metadata and scripts.
+src/exceptions/ – Contains BankingError, a custom error class.
 
-Setup
+src/main.ts – Entry point that demonstrates the system in action.
 
-Install Node.js: Ensure Node.js is installed on your system.
+⚙️ Setup Instructions
+✅ Prerequisites
+Node.js v14+
 
-Install Dependencies: Navigate to the project directory and run:
+TypeScript v5.5.4+
+
+📦 Installation
+bash
+Copy
+Edit
 npm install
-
-
-Build the Project: Compile TypeScript files to JavaScript:
+🔨 Build the Project
+bash
+Copy
+Edit
 npm run build
+🚀 Run the Project
+Development Mode (using ts-node):
 
-Run the Project: Developement:
+bash
+Copy
+Edit
 npm run dev
+Production Mode (after build):
 
-Run the Project: Execute the compiled program:
+bash
+Copy
+Edit
 npm start
+🧪 Example Usage
+Customers & Accounts
+Waleed Alaa
 
+Savings Account
 
+Checking Account
 
-Usage
-The main.ts file demonstrates the system's capabilities by:
+Kareem Mohamed
 
-Creating customers (e.g., Waleed and Kareem).
-Setting up accounts (savings and checking for Waleed, savings for Kareem).
-Performing transactions (deposits, withdrawals, transfers, and interest application).
-Displaying transaction history and final balances.
+Savings Account
 
-Example Output
-Transaction history for Waleed Alaa's savings account:
+Sample Transaction History
+Waleed Alaa - Savings Account
+pgsql
+Copy
+Edit
 Deposit of $1000 on [timestamp]: Deposited $1000
 Withdrawal of $200 on [timestamp]: Withdrew $200
 Interest of $24 on [timestamp]: Applied interest of $24
 Transfer of $300 on [timestamp]: Transferred $300 to CA001
-
-Transaction history for Waleed Alaa's checking account:
+Waleed Alaa - Checking Account
+pgsql
+Copy
+Edit
 Deposit of $500 on [timestamp]: Deposited $500
 Withdrawal of $600 on [timestamp]: Withdrew $600
 Deposit of $300 on [timestamp]: Deposited $300
-
-Balances:
+Final Balances
+nginx
+Copy
+Edit
 Waleed Alaa - Savings: $524
 Waleed Alaa - Checking: $200
 Kareem Mohamed - Savings: $0
+💡 OOP Design Principles Used
+Encapsulation – Use of private and protected fields.
 
-Notes
+Inheritance – SavingsAccount and CheckingAccount extend the abstract Account class.
 
-Modularity: The project uses TypeScript modules with import/export statements for proper file dependencies.
-OOP Principles:
-Encapsulation: Private/protected fields protect data.
-Inheritance: SavingsAccount and CheckingAccount extend the abstract Account class.
-Polymorphism: Account types implement specific behaviors (e.g., overdraft for checking accounts).
-Abstraction: The IAccount interface defines core account operations.
+Polymorphism – Different behavior for withdraw/applyInterest in different account types.
 
+Abstraction – Core account operations defined via IAccount interface.
 
-Overdraft in CheckingAccount: Withdrawals can result in a negative balance up to the overdraft limit (e.g., withdrawing $75 from a $50 balance with a $100 overdraft limit results in a $-25 balance).
-Extensibility: The system can be extended with features like overdraft fees, additional account types, or transaction reports.
+💬 Notes
+💳 Overdraft Feature:
+CheckingAccount allows negative balances within a defined limit.
+Example: Withdraw $75 from $50 balance with $100 overdraft ⇒ Final balance: -25.
 
-Requirements
+🧱 Extensibility:
+Easily add features like:
 
-Node.js (v14 or higher recommended)
-TypeScript (v5.5.4 or higher)
+Overdraft fees
+
+Transaction reports
+
+New account types
+
+🧰 Tech Stack
+Node.js (no external frameworks)
+
+TypeScript
+
+OOP (Object-Oriented Programming)
+
+📃 License
+This project is open-source and available for educational and demonstration purposes.
